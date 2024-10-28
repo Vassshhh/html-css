@@ -3,6 +3,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "orbitron", shan-sherif;
 }
 
 :root {
@@ -33,6 +34,7 @@ body {
   color: var(--txt-secondary);
   padding: 32px;
   margin: 8px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-center {
@@ -40,24 +42,52 @@ body {
 }
 
 .icons2 {
-  font-size: 25px;
+  font-size: 1.5em;
   margin: 0.4em;
   color: var(--icons-bg-primary);
 }
 
 .icons1 {
-  font-size: 25px;
+  font-size: 1.5em;
   background: linear-gradient(#5b51d8, #c13584, #f77737, #ffdc80);
   -webkit-background-clip: text; /* Hanya menampilkan background di area teks */
   color: transparent; /* Membuat teks transparan agar background terlihat */
+  margin: 0.4em;
 }
 
 .icons3 {
-  font-size: 25px;
+  font-size: 1.5em;
   color: #00aaff;
+  margin: 0.4em;
 }
 
 .icons4 {
-  font-size: 25px;
+  font-size: 1.5em;
   color: #0048ff;
+  margin: 0.4em;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.des {
+  font-size: 0.4em;
+  margin: 10px;
+  padding: 5px;
+}
+
+.bt {
+  margin-top: 16px;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+}
+
+.bt:hover {
+  background-color: var(--bg-primary);
+  color: var(--txt-primary);
+  transform: rotate(2deg);
+  transition: 0.3s ease-in-out;
 }
