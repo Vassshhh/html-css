@@ -159,14 +159,14 @@ body {
   width: 100%;
   border: none;
   border-radius: 5px;
-  background-color: #3498db;
-  color: white;
+  background-color: #eaeaea;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .bt:hover {
-  background-color: #2980b9;
+  background-color: #95d600;
   color: var(--txt-primary);
   transform: rotate(2deg);
 }
