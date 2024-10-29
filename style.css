@@ -3,7 +3,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "orbitron", shan-sherif;
+  font-family: "Orbitron", sans-serif;
 }
 
 :root {
@@ -15,25 +15,101 @@ body {
   --icons-bg-secondary: #777777;
 }
 
+/* Style untuk Loading Page */
+#loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  animation: hideLoadingPage 2s forwards;
+}
+
+@keyframes hideLoadingPage {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style Konten Utama */
+#main-content {
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: showMainContent 2.5s forwards;
+}
+
+@keyframes showMainContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .container {
   width: 100%;
   height: 100vh;
   background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
-  height: auto;
-  width: auto;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .card {
-  border: 1px solid white;
-  background-color: var(--bg-secondary);
-  color: var(--txt-secondary);
+  text-align: center;
+  width: auto;
   padding: 32px;
   margin: 8px;
+  background-color: var(--bg-secondary);
+  color: var(--txt-secondary);
+  border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -41,30 +117,30 @@ body {
   text-align: center;
 }
 
-.icons2 {
-  font-size: 1.5em;
-  margin: 0.4em;
-  color: var(--icons-bg-primary);
+.icons1,
+.icons2,
+.icons3,
+.icons4 {
+  font-size: 2em;
+  margin: 10px;
 }
 
 .icons1 {
-  font-size: 1.5em;
   background: linear-gradient(#5b51d8, #c13584, #f77737, #ffdc80);
-  -webkit-background-clip: text; /* Hanya menampilkan background di area teks */
-  color: transparent; /* Membuat teks transparan agar background terlihat */
-  margin: 0.4em;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.icons2 {
+  color: var(--icons-bg-primary);
 }
 
 .icons3 {
-  font-size: 1.5em;
   color: #00aaff;
-  margin: 0.4em;
 }
 
 .icons4 {
-  font-size: 1.5em;
   color: #0048ff;
-  margin: 0.4em;
 }
 
 .title {
@@ -72,22 +148,25 @@ body {
 }
 
 .des {
-  font-size: 0.4em;
+  font-size: 0.8em;
   margin: 10px;
   padding: 5px;
 }
 
 .bt {
   margin-top: 16px;
-  padding: 8px;
-  cursor: pointer;
+  padding: 10px 20px;
   width: 100%;
   border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .bt:hover {
-  background-color: var(--bg-primary);
+  background-color: #2980b9;
   color: var(--txt-primary);
   transform: rotate(2deg);
-  transition: 0.3s ease-in-out;
 }
