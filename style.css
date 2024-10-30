@@ -3,11 +3,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Orbitron", sans-serif;
+  font-family: "tiny5", sans-serif;
 }
 
 :root {
-  --bg-primary: #95d600;
+  --bg-primary: #0059d6;
   --bg-secondary: #eaeaea;
   --txt-primary: #f7f7f7;
   --txt-secondary: #222222;
@@ -32,6 +32,7 @@ body {
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   animation: hideLoadingPage 2s forwards;
+  font-size: 32px;
 }
 
 @keyframes hideLoadingPage {
@@ -99,16 +100,17 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
+  height: auto;
 }
 
 .card {
   text-align: center;
-  width: auto;
+  width: 40%;
   padding: 32px;
   margin: 8px;
   background-color: var(--bg-secondary);
   color: var(--txt-secondary);
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -166,7 +168,23 @@ body {
 }
 
 .bt:hover {
-  background-color: #95d600;
+  background-color: var(--bg-primary);
   color: var(--txt-primary);
   transform: rotate(2deg);
+}
+
+.container2 {
+  display: none;
+}
+
+@media screen and(max-width: 476px) {
+  .card {
+    width: 95%;
+  }
+}
+
+@media screen and(min-width: 1200px) and (max-width: 1300px) {
+  .container {
+    display: none;
+  }
 }
